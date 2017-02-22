@@ -1,0 +1,83 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Model.POPEntities
+{
+
+    public class POP_HANDLING_APPLY_CONTAINER_ITEM
+    {
+        public virtual string APPLY_NO { get; set; }
+        public virtual int DW_C_20 { get; set; }
+        public virtual int DW_C_40 { get; set; }
+        public virtual int DW_C_45 { get; set; }
+        public virtual int DW_C_OTHER { get; set; }
+        public virtual int DW_E_20 { get; set; }
+        public virtual int DW_E_40 { get; set; }
+        public virtual int DW_E_45 { get; set; }
+        public virtual int DW_E_OTHER { get; set; }
+        public virtual int UP_C_20 { get; set; }
+        public virtual int UP_C_40 { get; set; }
+        public virtual int UP_C_45 { get; set; }
+        public virtual int UP_C_OTHER { get; set; }
+        public virtual int UP_E_20 { get; set; }
+        public virtual int UP_E_40 { get; set; }
+        public virtual int UP_E_45 { get; set; }
+        public virtual int UP_E_OTHER { get; set; }
+        public virtual int RW1_C_20 { get; set; }
+        public virtual int RW1_C_40 { get; set; }
+        public virtual int RW1_C_45 { get; set; }
+        public virtual int RW1_C_OTHER { get; set; }
+        public virtual int RW1_E_20 { get; set; }
+        public virtual int RW1_E_40 { get; set; }
+        public virtual int RW1_E_45 { get; set; }
+        public virtual int RW1_E_OTHER { get; set; }
+        public virtual int RW2_C_20 { get; set; }
+        public virtual int RW2_C_40 { get; set; }
+        public virtual int RW2_C_45 { get; set; }
+        public virtual int RW2_C_OTHER { get; set; }
+        public virtual int RW2_E_20 { get; set; }
+        public virtual int RW2_E_40 { get; set; }
+        public virtual int RW2_E_45 { get; set; }
+        public virtual int RW2_E_OTHER { get; set; }
+        public virtual int RE_DW_C_20 { get; set; }
+        public virtual int RE_DW_C_40 { get; set; }
+        public virtual int RE_DW_C_45 { get; set; }
+        public virtual int RE_DW_C_OTHER { get; set; }
+        public virtual int RE_DW_E_20 { get; set; }
+        public virtual int RE_DW_E_40 { get; set; }
+        public virtual int RE_DW_E_45 { get; set; }
+        public virtual int RE_DW_E_OTHER { get; set; }
+        public virtual int RE_UP_C_20 { get; set; }
+        public virtual int RE_UP_C_40 { get; set; }
+        public virtual int RE_UP_C_45 { get; set; }
+        public virtual int RE_UP_C_OTHER { get; set; }
+        public virtual int RE_UP_E_20 { get; set; }
+        public virtual int RE_UP_E_40 { get; set; }
+        public virtual int RE_UP_E_45 { get; set; }
+        public virtual int RE_UP_E_OTHER { get; set; }
+        public virtual int RL_DW_C_20 { get; set; }
+        public virtual int RL_DW_C_40 { get; set; }
+        public virtual int RL_DW_C_45 { get; set; }
+        public virtual int RL_DW_C_OTHER { get; set; }
+        public virtual int RL_DW_E_20 { get; set; }
+        public virtual int RL_DW_E_40 { get; set; }
+        public virtual int RL_DW_E_45 { get; set; }
+        public virtual int RL_DW_E_OTHER { get; set; }
+        public virtual int RL_UP_C_20 { get; set; }
+        public virtual int RL_UP_C_40 { get; set; }
+        public virtual int RL_UP_C_45 { get; set; }
+        public virtual int RL_UP_C_OTHER { get; set; }
+        public virtual int RL_UP_E_20 { get; set; }
+        public virtual int RL_UP_E_40 { get; set; }
+        public virtual int RL_UP_E_45 { get; set; }
+        public virtual int RL_UP_E_OTHER { get; set; }
+        public virtual string SPECIAL_REMARK { get; set; }
+
+
+    }
+
+}
+

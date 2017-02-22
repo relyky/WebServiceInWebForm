@@ -1,0 +1,738 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Echo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="arg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EchoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EchoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStatusOfContainerHandlingFinishReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="apply_no" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStatusOfContainerHandlingFinishReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStatusOfContainerHandlingFinishReportResult" type="tns:PSSApiResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PSSApiResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="processStatus" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="errorHappend" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="msg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UploadPOPPortServiceApply">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="act" type="tns:PSSApiAct" />
+            <s:element minOccurs="0" maxOccurs="1" name="formData" type="tns:POP_PORT_SERVICE" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PSSApiAct">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Action" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tag" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="POP_PORT_SERVICE">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MASTER_APPLY_NO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VISA_NO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TEMP_VISA_NO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="APPLICANT" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SHIPPING_CARRIERS" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ID_CARD_NUM" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VAT" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="APPLY_DT" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="LAST_MODIFY_DT" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="MANIFEST_ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="START_DT" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="STATUS" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="WAREHOUSE_OUT_EXPORT" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="WAREHOUSE_OUT_IMPORT" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="WAREHOUSE_IN_EXPORT" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="WAREHOUSE_IN_IMPORT" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="CY_APPLY" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="MY_IN_APPLY" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="MY_OUT_APPLY" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="CONTAINER_TYPE_OTHER" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="PT_EQUIPMENT_APPLY" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="PT_LOCATION_APPLY" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="MCH_APPLY" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="CONTAINER_SECURITY_APPLY" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="SINGLE_LOADING_APPLY" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="DEVANNING_APPLY" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="NIGHT_EQUIPMENT_CHARGE" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="DETENTION_CHARGE" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="WEIGHHOUSE_CHARGE" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="OTHER_CHARGE" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="IS_CHECKOUT" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="STEVEDORE_C" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="APPLY_ORG_CODE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PORT" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="INTERNAL_INWAREHOUSE" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="INTERNAL_OUTWAREHOUSE" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="DEPUTY_BY" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IS_FREE_PORT" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IS_HANDLING_LOCK" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="HANDLING_TYPE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DEPUTY_NAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="APPLY_ORG_NAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BAN_NO" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UploadPOPPortServiceApplyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UploadPOPPortServiceApplyResult" type="tns:PSSApiResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadContainerHandlingApply">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="act" type="tns:PSSApiAct" />
+            <s:element minOccurs="0" maxOccurs="1" name="formData" type="tns:POP_HANDLING_APPLY_CONTAINER" />
+            <s:element minOccurs="0" maxOccurs="1" name="formItem" type="tns:POP_HANDLING_APPLY_CONTAINER_ITEM" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="POP_HANDLING_APPLY_CONTAINER">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="APPLY_NO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MASTER_APPLY_NO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VISA_NO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PORT" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="APPLY_BY" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="APPLY_ORG" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="APPLY_DT" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="CANCEL_BY" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CANCEL_DT" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="CANCEL_REASON" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AUDIT_BY" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AUDIT_DT" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="AUDIT_STATUS" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LAST_MODIFY_ID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="LAST_MODIFY_DT" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="POP_HANDLING_APPLY_CONTAINER_ITEM">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="APPLY_NO" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DW_C_20" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DW_C_40" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DW_C_45" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DW_C_OTHER" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DW_E_20" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DW_E_40" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DW_E_45" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DW_E_OTHER" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UP_C_20" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UP_C_40" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UP_C_45" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UP_C_OTHER" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UP_E_20" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UP_E_40" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UP_E_45" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UP_E_OTHER" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RW1_C_20" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RW1_C_40" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RW1_C_45" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RW1_C_OTHER" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RW1_E_20" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RW1_E_40" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RW1_E_45" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RW1_E_OTHER" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RW2_C_20" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RW2_C_40" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RW2_C_45" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RW2_C_OTHER" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RW2_E_20" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RW2_E_40" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RW2_E_45" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RW2_E_OTHER" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RE_DW_C_20" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RE_DW_C_40" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RE_DW_C_45" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RE_DW_C_OTHER" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RE_DW_E_20" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RE_DW_E_40" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RE_DW_E_45" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RE_DW_E_OTHER" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RE_UP_C_20" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RE_UP_C_40" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RE_UP_C_45" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RE_UP_C_OTHER" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RE_UP_E_20" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RE_UP_E_40" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RE_UP_E_45" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RE_UP_E_OTHER" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RL_DW_C_20" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RL_DW_C_40" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RL_DW_C_45" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RL_DW_C_OTHER" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RL_DW_E_20" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RL_DW_E_40" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RL_DW_E_45" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RL_DW_E_OTHER" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RL_UP_C_20" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RL_UP_C_40" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RL_UP_C_45" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RL_UP_C_OTHER" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RL_UP_E_20" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RL_UP_E_40" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RL_UP_E_45" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RL_UP_E_OTHER" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="SPECIAL_REMARK" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UploadContainerHandlingApplyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UploadContainerHandlingApplyResult" type="tns:PSSApiResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadContainerHandlingEfficiency">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="act" type="tns:PSSApiAct" />
+            <s:element minOccurs="0" maxOccurs="1" name="formData" type="tns:POP_HANDLING_EFFICIENCY_CONTAINER" />
+            <s:element minOccurs="0" maxOccurs="1" name="formItem" type="tns:ArrayOfPOP_HANDLING_EFFICIENCY_CONTAINER_ITEM" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="POP_HANDLING_EFFICIENCY_CONTAINER">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="VISA_NO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HISTORY_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WHARF" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MGT_CENTER" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ASSIGN_DT" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="FINISH_DT" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="IS_FINISH" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="EXPECT_LOAD_TON" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="EXPECT_UNLOAD_TON" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="LAST_UPD_USER" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="LAST_MODIFY_DT" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="TOTAL_DELAY_TIME" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="TOTAL_WORK_TIME" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="DELAY_UNLOAD_MACH_TIME" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="DELAY_LOAD_MACH_TIME" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="DELAY_UNLOAD_OP_TIME" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="DELAY_LOAD_OP_TIME" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="APPLY_BY" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="APPLY_ORG" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ENABLE" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPOP_HANDLING_EFFICIENCY_CONTAINER_ITEM">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="POP_HANDLING_EFFICIENCY_CONTAINER_ITEM" nillable="true" type="tns:POP_HANDLING_EFFICIENCY_CONTAINER_ITEM" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="POP_HANDLING_EFFICIENCY_CONTAINER_ITEM">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="DETAIL_NO" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="VISA_NO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WHARF" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="STEVEDORE_C" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MACHINES_CODE" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="START_DT" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="END_DT" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="WORK_TIME" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="TOTAL_DELAY_TIME" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="TOTAL_WORK_TIME" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="LOAD_DT" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="UNLOAD_DT" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="OP_NUM" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="WAIT_BERTHING" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="WAIT_MACHINES" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="WAIT_LIFING_COVER" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="WAIT_EQPT_ERR" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="WAIT_MACH_ERR" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="WAIT_CRANE" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="WAIT_OTHER" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="LOAD_CONTAINER_20" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="LOAD_CONTAINER_40" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="LOAD_CONTAINER_45" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UNLOAD_CONTAINER_20" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UNLOAD_CONTAINER_40" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UNLOAD_CONTAINER_45" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RESTOWAGE_F_20" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RESTOWAGE_F_40" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RESTOWAGE_F_45" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RESTOWAGE_S_20" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RESTOWAGE_S_40" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RESTOWAGE_S_45" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="LAST_UPD_USER" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="LAST_MODIFY_DT" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ENABLE" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UploadContainerHandlingEfficiencyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UploadContainerHandlingEfficiencyResult" type="tns:PSSApiResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadContainerHandlingFinishReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="act" type="tns:PSSApiAct" />
+            <s:element minOccurs="0" maxOccurs="1" name="formData" type="tns:POP_HANDLING_FINISH_REPORT_CONTAINER" />
+            <s:element minOccurs="0" maxOccurs="1" name="formItem" type="tns:POP_HANDLING_FINISH_REPORT_ITEMS_CONTAINER" />
+            <s:element minOccurs="0" maxOccurs="1" name="formItem2" type="tns:ArrayOfPOP_HANDLING_FINISH_REPORT_ITEMS_CONTAINER_SPECIAL" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="POP_HANDLING_FINISH_REPORT_CONTAINER">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="APPLY_NO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MASTER_APPLY_NO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VISA_NO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PORT" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="REPORT_DT" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="APPLY_USER_ID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="UP_WORK_TIME" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="DW_WORK_TIME" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="UP_DELAY_TIME" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="DW_DELAY_TIME" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="HOUR_QTY" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="OUA" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="OP_NUM" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="KEYIN_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="STEVEDORING_ADMIN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WAREHOUSE_HEAD" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="NUM_BOOM" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="WHARF" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="START_DT" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="END_DT" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="BOAT_TIME" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="BERTHING_DT" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="OFFSHORE_DT" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="PARK_TIME" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="APPLY_BY" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="APPLY_DT" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="CANCEL_BY" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CANCEL_DT" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="CANCEL_REASON" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AUDIT_BY" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AUDIT_DT" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="AUDIT_STATUS" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LAST_MODIFY_ID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="LAST_MODIFY_DT" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="TYPE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MAIN_MASTER_APPLY_NO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="STEVEDORE_C" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ORIGIN_APPLY_NO" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IS_MATCH_PROCESS" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="APPLY_ORG" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="MATCH_FLAG1" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="MATCH_FLAG2" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IS_AGENT" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="MGT_CENTER" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HISTORY_ID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="POP_HANDLING_FINISH_REPORT_ITEMS_CONTAINER">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="APPLY_NO" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DW_C_10" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DW_C_20" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DW_C_40" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DW_C_45" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DW_C_OTHER" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DW_E_10" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DW_E_20" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DW_E_40" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DW_E_45" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DW_E_OTHER" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DW_C_V_10" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DW_C_V_20" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DW_C_V_40" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DW_C_V_45" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DW_C_V_OTHER" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DW_E_V_10" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DW_E_V_20" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DW_E_V_40" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DW_E_V_45" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DW_E_V_OTHER" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DW_C_W_10" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DW_C_W_20" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DW_C_W_40" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DW_C_W_45" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DW_C_W_OTHER" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DW_E_W_10" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DW_E_W_20" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DW_E_W_40" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DW_E_W_45" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DW_E_W_OTHER" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UP_C_10" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UP_C_20" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UP_C_40" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UP_C_45" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UP_C_OTHER" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UP_E_10" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UP_E_20" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UP_E_40" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UP_E_45" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UP_E_OTHER" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UP_C_V_10" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UP_C_V_20" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UP_C_V_40" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UP_C_V_45" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UP_C_V_OTHER" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UP_E_V_10" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UP_E_V_20" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UP_E_V_40" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UP_E_V_45" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UP_E_V_OTHER" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UP_C_W_10" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UP_C_W_20" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UP_C_W_40" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UP_C_W_45" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UP_C_W_OTHER" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UP_E_W_10" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UP_E_W_20" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UP_E_W_40" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UP_E_W_45" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UP_E_W_OTHER" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RW1_C_10" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RW1_C_20" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RW1_C_40" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RW1_C_45" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RW1_C_OTHER" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RW1_E_10" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RW1_E_20" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RW1_E_40" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RW1_E_45" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RW1_E_OTHER" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RW2_C_10" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RW2_C_20" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RW2_C_40" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RW2_C_45" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RW2_C_OTHER" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RW2_E_10" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RW2_E_20" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RW2_E_40" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RW2_E_45" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RW2_E_OTHER" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RE_DW_C_10" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RE_DW_C_20" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RE_DW_C_40" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RE_DW_C_45" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RE_DW_C_OTHER" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RE_DW_E_10" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RE_DW_E_20" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RE_DW_E_40" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RE_DW_E_45" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RE_DW_E_OTHER" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RE_UP_C_10" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RE_UP_C_20" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RE_UP_C_40" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RE_UP_C_45" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RE_UP_C_OTHER" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RE_UP_E_10" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RE_UP_E_20" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RE_UP_E_40" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RE_UP_E_45" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RE_UP_E_OTHER" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RL_DW_C_10" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RL_DW_C_20" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RL_DW_C_40" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RL_DW_C_45" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RL_DW_C_OTHER" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RL_DW_E_10" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RL_DW_E_20" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RL_DW_E_40" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RL_DW_E_45" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RL_DW_E_OTHER" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RL_UP_C_10" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RL_UP_C_20" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RL_UP_C_40" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RL_UP_C_45" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RL_UP_C_OTHER" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RL_UP_E_10" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RL_UP_E_20" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RL_UP_E_40" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RL_UP_E_45" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RL_UP_E_OTHER" nillable="true" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPOP_HANDLING_FINISH_REPORT_ITEMS_CONTAINER_SPECIAL">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="POP_HANDLING_FINISH_REPORT_ITEMS_CONTAINER_SPECIAL" nillable="true" type="tns:POP_HANDLING_FINISH_REPORT_ITEMS_CONTAINER_SPECIAL" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="POP_HANDLING_FINISH_REPORT_ITEMS_CONTAINER_SPECIAL">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="SEQ" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="APPLY_NO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="KIND" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TYPE" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SIZE" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DW" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UP" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RE_DW" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RE_UP" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RL_DW" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RL_UP" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RW1" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RW2" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="REMARK" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LAST_MODIFY_ID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="LAST_MODIFY_DT" nillable="true" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UploadContainerHandlingFinishReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UploadContainerHandlingFinishReportResult" type="tns:PSSApiResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="EchoSoapIn">
+    <wsdl:part name="parameters" element="tns:Echo" />
+  </wsdl:message>
+  <wsdl:message name="EchoSoapOut">
+    <wsdl:part name="parameters" element="tns:EchoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStatusOfContainerHandlingFinishReportSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStatusOfContainerHandlingFinishReport" />
+  </wsdl:message>
+  <wsdl:message name="GetStatusOfContainerHandlingFinishReportSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStatusOfContainerHandlingFinishReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadPOPPortServiceApplySoapIn">
+    <wsdl:part name="parameters" element="tns:UploadPOPPortServiceApply" />
+  </wsdl:message>
+  <wsdl:message name="UploadPOPPortServiceApplySoapOut">
+    <wsdl:part name="parameters" element="tns:UploadPOPPortServiceApplyResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadContainerHandlingApplySoapIn">
+    <wsdl:part name="parameters" element="tns:UploadContainerHandlingApply" />
+  </wsdl:message>
+  <wsdl:message name="UploadContainerHandlingApplySoapOut">
+    <wsdl:part name="parameters" element="tns:UploadContainerHandlingApplyResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadContainerHandlingEfficiencySoapIn">
+    <wsdl:part name="parameters" element="tns:UploadContainerHandlingEfficiency" />
+  </wsdl:message>
+  <wsdl:message name="UploadContainerHandlingEfficiencySoapOut">
+    <wsdl:part name="parameters" element="tns:UploadContainerHandlingEfficiencyResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadContainerHandlingFinishReportSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadContainerHandlingFinishReport" />
+  </wsdl:message>
+  <wsdl:message name="UploadContainerHandlingFinishReportSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadContainerHandlingFinishReportResponse" />
+  </wsdl:message>
+  <wsdl:portType name="MyWebService1Soap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Echo">
+      <wsdl:input message="tns:EchoSoapIn" />
+      <wsdl:output message="tns:EchoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStatusOfContainerHandlingFinishReport">
+      <wsdl:input message="tns:GetStatusOfContainerHandlingFinishReportSoapIn" />
+      <wsdl:output message="tns:GetStatusOfContainerHandlingFinishReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadPOPPortServiceApply">
+      <wsdl:input message="tns:UploadPOPPortServiceApplySoapIn" />
+      <wsdl:output message="tns:UploadPOPPortServiceApplySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadContainerHandlingApply">
+      <wsdl:input message="tns:UploadContainerHandlingApplySoapIn" />
+      <wsdl:output message="tns:UploadContainerHandlingApplySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadContainerHandlingEfficiency">
+      <wsdl:input message="tns:UploadContainerHandlingEfficiencySoapIn" />
+      <wsdl:output message="tns:UploadContainerHandlingEfficiencySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadContainerHandlingFinishReport">
+      <wsdl:input message="tns:UploadContainerHandlingFinishReportSoapIn" />
+      <wsdl:output message="tns:UploadContainerHandlingFinishReportSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MyWebService1Soap" type="tns:MyWebService1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Echo">
+      <soap:operation soapAction="http://tempuri.org/Echo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatusOfContainerHandlingFinishReport">
+      <soap:operation soapAction="http://tempuri.org/GetStatusOfContainerHandlingFinishReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadPOPPortServiceApply">
+      <soap:operation soapAction="http://tempuri.org/UploadPOPPortServiceApply" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadContainerHandlingApply">
+      <soap:operation soapAction="http://tempuri.org/UploadContainerHandlingApply" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadContainerHandlingEfficiency">
+      <soap:operation soapAction="http://tempuri.org/UploadContainerHandlingEfficiency" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadContainerHandlingFinishReport">
+      <soap:operation soapAction="http://tempuri.org/UploadContainerHandlingFinishReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MyWebService1Soap12" type="tns:MyWebService1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Echo">
+      <soap12:operation soapAction="http://tempuri.org/Echo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatusOfContainerHandlingFinishReport">
+      <soap12:operation soapAction="http://tempuri.org/GetStatusOfContainerHandlingFinishReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadPOPPortServiceApply">
+      <soap12:operation soapAction="http://tempuri.org/UploadPOPPortServiceApply" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadContainerHandlingApply">
+      <soap12:operation soapAction="http://tempuri.org/UploadContainerHandlingApply" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadContainerHandlingEfficiency">
+      <soap12:operation soapAction="http://tempuri.org/UploadContainerHandlingEfficiency" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadContainerHandlingFinishReport">
+      <soap12:operation soapAction="http://tempuri.org/UploadContainerHandlingFinishReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MyWebService1">
+    <wsdl:port name="MyWebService1Soap" binding="tns:MyWebService1Soap">
+      <soap:address location="http://localhost/WS/MyWebService1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MyWebService1Soap12" binding="tns:MyWebService1Soap12">
+      <soap12:address location="http://localhost/WS/MyWebService1.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
